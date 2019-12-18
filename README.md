@@ -1,13 +1,7 @@
-# `elixir-auth-github` demo
-
-A tutorial showing you how to create a Phoenix app
-with GitHub Authentication
-using [elixir-auth-github](https://github.com/dwyl/elixir-auth-github)
-in 5 minutes<sup>1</sup>
-
 # `elixir-auth-github` _demo_
 
-A basic example of using Google Auth in a Phoenix App.
+A basic example/tutorial showing GitHub Auth in a Phoenix App
+using elixir-auth-github](https://github.com/dwyl/elixir-auth-github).
 
 ![Build Status](https://img.shields.io/travis/com/dwyl/elixir-auth-github-demo/master?color=bright-green&style=flat-square)
 [![codecov.io](https://img.shields.io/codecov/c/github/dwyl/elixir-auth-github/master.svg?style=flat-square)](http://codecov.io/github/dwyl/elixir-auth-github?branch=master)
@@ -21,20 +15,21 @@ As developers we are _always learning_ new things.
 When we learn, we love having _detailed docs and **examples**_
 that explain _exactly_ how to get up-and-running.
 We write examples because we want them _ourselves_,
-if you find them useful, please :star: the repo to let us know.
+if you find them useful, please ⭐️ the repo to let us know.
 
 
 # _What_? 💭
 
-This project is intended as a _barebones_ demonstration
+This project is a _barebones_ demo
 of using
 [`elixir-auth-github`](https://github.com/dwyl/elixir-auth-github)
-to add support for "***Sign-in with Google***" to any Phoenix Application.
+to add "***Sign-in with GitHub***" support
+to any Phoenix Application.
 
 # _Who_? 👥
 
 This demos is intended for people of all Elixir/Phoenix skill levels.
-Anyone who wants the "***Sign-in with Google***" functionality
+Anyone who wants the "***Sign-in with GitHub***" functionality
 without the extra steps to configure a whole auth _framework_.
 
 Following all the steps in this example should take around 10 minutes.
@@ -109,18 +104,18 @@ Run the **`mix deps.get`** command to download.
 
 
 
-## 2. Create the Google APIs Application OAuth2 Credentials ✨
+## 2. Create the GitHub OAuth Application and Get Credentials ✨
 
-Create your Google App and download the API keys
+Create your GitHub App and download the API keys
 by follow the instructions in:
-[`/create-google-app-guide.md`](https://github.com/dwyl/elixir-auth-github/blob/master/create-google-app-guide.md)
+[`/create-github-app-guide.md`](https://github.com/dwyl/elixir-auth-github/blob/master/create-github-app-guide.md)
 
 By the end of this step
 you should have these two environment variables defined:
 
 ```yml
-GOOGLE_CLIENT_ID=631770888008-6n0oruvsm16kbkqg6u76p5cv5kfkcekt.apps.googleusercontent.com
-GOOGLE_CLIENT_SECRET=MHxv6-RGF5nheXnxh1b0LNDq
+GITHUB_CLIENT_ID=631770888008-6n0oruvsm16kbkqg6u76p5cv5kfkcekt
+GITHUB_CLIENT_SECRET=MHxv6-RGF5nheXnxh1b0LNDq
 ```
 
 > ⚠️ Don't worry, these keys aren't valid.
@@ -129,28 +124,31 @@ They are just here for illustration purposes.
 ## 3. Create 2 New Files  ➕
 
 We need to create two files in order to handle the requests
-to the Google Auth API and display data to people using our app.
+to the GitHub OAuth API and display data to people using our app.
 
-### 3.1 Create a `GoogleAuthController` in your Project
+### 3.1 Create a `GithubAuthController` in your Project
 
-In order to process and _display_ the data returned by the Google OAuth2 API,
+In order to process and _display_ the data returned by the GitHub OAuth2 API,
 we need to create a new `controller`.
 
 Create a new file called
-`lib/app_web/controllers/google_auth_controller.ex`
+`lib/app_web/controllers/github_auth_controller.ex`
+
+
+# > `CONTINUE` _HERE_!
 
 and add the following code:
 
 ```elixir
-defmodule AppWeb.GoogleAuthController do
+defmodule AppWeb.GithubAuthController do
   use AppWeb, :controller
 
   @doc """
-  `index/2` handles the callback from Google Auth API redirect.
+  `index/2` handles the callback from GitHub Auth API redirect.
   """
   def index(conn, %{"code" => code}) do
-    {:ok, token} = ElixirAuthGoogle.get_token(code, conn)
-    {:ok, profile} = ElixirAuthGoogle.get_user_profile(token.access_token)
+    {:ok, token} = ElixirAuthGithub.get_token(code, conn)
+    {:ok, profile} = ElixirAuthGithub.get_user_profile(token.access_token)
     conn
     |> put_view(AppWeb.PageView)
     |> render(:welcome, profile: profile)
@@ -158,11 +156,11 @@ defmodule AppWeb.GoogleAuthController do
 end
 ```
 This code does 3 things:
-+ Create a one-time auth token based on the response `code` sent by Google
++ Create a one-time auth token based on the response `code` sent by GitHub
 after the person authenticates.
-+ Request the person's profile data from Google based on the `access_token`
++ Request the person's profile data from GitHub based on the `access_token`
 + Render a `:welcome` view displaying some profile data
-to confirm that login with Google was successful.
+to confirm that login with GitHub was successful.
 
 > Note: we are placing the `welcome.html.eex` template
 in the `template/page` directory to save having to create
@@ -181,14 +179,15 @@ And type (_or paste_) the following code in it:
   <img width="32px" src="<%= @profile.picture %>" />
   </h1>
   <p> You are <strong>signed in</strong>
-    with your <strong>Google Account</strong> <br />
+    with your <strong>GitHub Account</strong> <br />
     <strong style="color:teal;"><%= @profile.email %></strong>
   <p/>
 </section>
 ```
 
+> **`TODO`**: update the profile Map:
 
-The Google Auth API `get_profile` request
+The GitHub Auth API `get_profile` request
 returns profile data in the following format:
 ```elixir
 %{
@@ -206,7 +205,7 @@ You can use this data however you see fit.
 (_obviously treat it with respect, only store what you need and keep it secure_)
 
 
-## 4. Add the `/auth/google/callback` to `router.ex`
+## 4. Add the `/auth/github/callback` to `router.ex`
 
 Open your `lib/app_web/router.ex` file
 and locate the section that looks like `scope "/", AppWeb do`
@@ -214,16 +213,16 @@ and locate the section that looks like `scope "/", AppWeb do`
 Add the following line:
 
 ```elixir
-get "/auth/google/callback", GoogleAuthController, :index
+get "/auth/github/callback", GithubAuthController, :index
 ```
 
 That will direct the API request response
-to the `GoogleAuthController` `:index` function we defined above.
+to the `GithubAuthController` `:index` function we defined above.
 
 
 ## 5. Update `PageController.index`
 
-In order to display the "Sign-in with Google" button in the UI,
+In order to display the "Sign-in with GitHub" button in the UI,
 we need to _generate_ the URL for the button in the relevant controller,
 and pass it to the template.
 
@@ -237,11 +236,13 @@ def index(conn, _params) do
 end
 ```
 
+> **`TODO`**: confirm that this is all the code we need:
+
 To:
 ```elixir
 def index(conn, _params) do
-  oauth_google_url = ElixirAuthGoogle.generate_oauth_url(conn)
-  render(conn, "index.html",[oauth_google_url: oauth_google_url])
+  oauth_github_url = ElixirAuthGithub.generate_oauth_url(conn)
+  render(conn, "index.html",[oauth_github_url: oauth_github_url])
 end
 ```
 
@@ -250,26 +251,26 @@ end
 Open the `/lib/app_web/templates/page/index.html.eex` file
 and type the following code:
 
+> **`TODO`**: create button: https://github.com/dwyl/elixir-auth-github/issues/33
+
 ```html
 <section class="phx-hero">
   <h1>Welcome to Awesome App!</h1>
-  <p>To get started, login to your Google Account: <p>
-  <a href="<%= @oauth_google_url %>">
-    <img src="https://i.imgur.com/Kagbzkq.png" alt="Sign in with Google" />
+  <p>To get started, login to your GitHub Account: <p>
+  <a href="<%= @oauth_github_url %>">
+    <img src="https://i.imgur.com/Kagbzkq.png" alt="Sign in with GitHub" />
   </a>
 </section>
 ```
 
-The home page of the app now has a big "Sign in with Google" button:
+The home page of the app now has a big "Sign in with GitHub" button:
 
 ![sign-in-button](https://user-images.githubusercontent.com/194400/70202961-3c32c880-1713-11ea-9737-9121030ace06.png)
 
-
-Once the person completes their authentication with Google,
+Once the person completes their authentication with GitHub,
 they should see the following welcome message:
 
 ![welcome](https://user-images.githubusercontent.com/194400/70201692-494db880-170f-11ea-9776-0ffd1fdf5a72.png)
-
 
 
 To start your Phoenix server:
