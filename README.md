@@ -1,7 +1,7 @@
 # `elixir-auth-github` _demo_
 
 A basic example/tutorial showing GitHub Auth in a Phoenix App
-using elixir-auth-github](https://github.com/dwyl/elixir-auth-github).
+using [`elixir-auth-github`](https://github.com/dwyl/elixir-auth-github).
 
 ![Build Status](https://img.shields.io/travis/com/dwyl/elixir-auth-github-demo/master?color=bright-green&style=flat-square)
 [![codecov.io](https://img.shields.io/codecov/c/github/dwyl/elixir-auth-github/master.svg?style=flat-square)](http://codecov.io/github/dwyl/elixir-auth-github?branch=master)
@@ -14,7 +14,7 @@ using elixir-auth-github](https://github.com/dwyl/elixir-auth-github).
 As developers we are _always learning_ new things.
 When we learn, we love having _detailed docs and **examples**_
 that explain _exactly_ how to get up-and-running.
-We write examples because we want them _ourselves_,
+We _write_ examples because we want them for _ourselves_,
 if you find them useful, please ⭐️ the repo to let us know.
 
 
@@ -24,7 +24,7 @@ This project is a _barebones_ demo
 of using
 [`elixir-auth-github`](https://github.com/dwyl/elixir-auth-github)
 to add "***Sign-in with GitHub***" support
-to any Phoenix Application.
+to any Phoenix App.
 
 # _Who_? 👥
 
