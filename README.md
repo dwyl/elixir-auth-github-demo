@@ -11,7 +11,7 @@ A basic example of using Google Auth in a Phoenix App.
 
 ![Build Status](https://img.shields.io/travis/com/dwyl/elixir-auth-github-demo/master?color=bright-green&style=flat-square)
 [![codecov.io](https://img.shields.io/codecov/c/github/dwyl/elixir-auth-github/master.svg?style=flat-square)](http://codecov.io/github/dwyl/elixir-auth-github?branch=master)
-![Hex.pm](https://img.shields.io/hexpm/v/elixir_auth_google?color=brightgreen&style=flat-square)
+![Hex.pm](https://img.shields.io/hexpm/v/elixir_auth_github?color=brightgreen&style=flat-square)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/dwyl/elixir-auth-github/issues)
 
 
@@ -51,7 +51,7 @@ This example follows the step-by-instructions in the docs
 
 Create a new project if you don't already have one:
 
-> _If you're adding `elixir_auth_google` to an **existing app**,
+> _If you're adding `elixir_auth_github` to an **existing app**,
 you can **skip this step**. <br />
 Just make sure your app is in a known working state before proceeding_.
 
@@ -94,14 +94,14 @@ and visit the endpoint in your web browser: http://localhost:4000/
 
 
 
-## 1. Add the `elixir_auth_google` package to `mix.exs` 📦
+## 1. Add the `elixir_auth_github` package to `mix.exs` 📦
 
 Open your `mix.exs` file and add the following line to your `deps` list:
 
 ```elixir
 def deps do
   [
-    {:elixir_auth_google, "~> 1.0.2"}
+    {:elixir_auth_github, "~> 1.0.0"}
   ]
 end
 ```
