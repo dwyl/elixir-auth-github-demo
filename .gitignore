@@ -49,3 +49,4 @@ npm-debug.log
 # see: https://git.io/JeMLg
 .env
 .idea
+.DS_Store
