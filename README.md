@@ -99,7 +99,7 @@ Open your `mix.exs` file and add the following line to your `deps` list:
 ```elixir
 def deps do
   [
-    {:elixir_auth_github, "~> 1.0.0"}
+    {:elixir_auth_github, "~> 1.0.1"}
   ]
 end
 ```
@@ -330,8 +330,10 @@ and will see welcome message:
 
 This guide is meant to get your Phoenix App up-and-running
 with [elixir-auth-github](https://github.com/dwyl/elixir-auth-github)
-on **`localhost`.
-The demo is deployed to Heroku to demonstrate that the code works as expected.
+on **`localhost`**.
+
+The demo is deployed to Heroku to demonstrate that the code works as expected:
+
 If you want to deploy your App to Heroku,
 we created a _separate_ guide for that!
 see:
