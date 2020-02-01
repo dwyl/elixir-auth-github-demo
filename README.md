@@ -334,9 +334,24 @@ This guide is meant to get your Phoenix App up-and-running
 with [elixir-auth-github](https://github.com/dwyl/elixir-auth-github)
 on **`localhost`**.
 
-The demo is deployed to Heroku to demonstrate that the code works as expected:
+The demo is deployed to Heroku
+to demonstrate that the code works as expected:
+https://elixir-auth-github-demo.herokuapp.com
 
-If you want to deploy your App to Heroku,
+No data is saved by the demo app,
+so feel free to try an _break_ it!
+
+![heroku-demo-homepage](https://user-images.githubusercontent.com/194400/73600128-16c01080-4544-11ea-8d34-b45bba1c3576.png)
+
+Auth Step:
+
+![heroku-demo-auth](https://user-images.githubusercontent.com/194400/73600133-23dcff80-4544-11ea-9a99-f357c7c3d497.png)
+
+Success:
+
+![heroku-demo-welcome](https://user-images.githubusercontent.com/194400/73600142-3b1bed00-4544-11ea-977a-a38bbe5f129c.png)
+
+If you want to learn how to deploy _your_ App to Heroku,
 we created a _separate_ guide for that!
 see:
 [/elixir-phoenix-app-deployment.md](https://github.com/dwyl/learn-heroku/blob/master/elixir-phoenix-app-deployment.md)
