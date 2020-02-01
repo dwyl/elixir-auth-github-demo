@@ -239,6 +239,8 @@ is the following format:
 }
 ```
 
+More info: https://developer.github.com/v3/users
+
 You can use this data however you see fit.
 (_obviously treat it with respect,
   only store what you need and keep it secure_)
