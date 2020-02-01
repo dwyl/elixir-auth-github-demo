@@ -48,3 +48,4 @@ npm-debug.log
 # .env file stores Environment Variables on Localhost
 # see: https://git.io/JeMLg
 .env
+.idea
