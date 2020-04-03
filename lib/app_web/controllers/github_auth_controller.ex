@@ -5,6 +5,7 @@ defmodule AppWeb.GithubAuthController do
   `index/2` handles the callback from GitHub Auth API redirect.
   """
   def index(conn, %{"code" => code}) do
+    # IO.inspect(code, label: "code index/2:8")
     {:ok, profile} = ElixirAuthGithub.github_auth(code)
     conn
     |> put_view(AppWeb.PageView)

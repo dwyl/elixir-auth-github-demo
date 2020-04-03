@@ -44,7 +44,7 @@ defmodule App.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
 
-      {:elixir_auth_github, "~> 1.0.1"}
+      {:elixir_auth_github, "~> 1.1.5"}
     ]
   end
 
