@@ -4,7 +4,7 @@ defmodule App.MixProject do
   def project do
     [
       app: :app,
-      version: "1.3.0",
+      version: "1.4.0",
       elixir: "~> 1.10",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
@@ -34,7 +34,7 @@ defmodule App.MixProject do
   defp deps do
     [
 
-      {:phoenix, "~> 1.5.3"},
+      {:phoenix, "~> 1.5.4"},
       {:phoenix_pubsub, "~> 2.0"},
       {:phoenix_html, "~> 2.13"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
@@ -46,7 +46,7 @@ defmodule App.MixProject do
       {:ecto_sql, "~> 3.0"},
       {:postgrex, ">= 0.0.0"},
 
-      {:elixir_auth_github, "~> 1.3.0"}
+      {:elixir_auth_github, "~> 1.4.0"}
     ]
   end
 
