@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>GitHub Auth Demo</title>
     <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
-    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
   </head>
   <body>
     <header>
@@ -17,7 +17,7 @@
           </ul>
         </nav>
         <a href="http://phoenixframework.org/" class="phx-logo">
-          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
+          <img src={Routes.static_path(@conn, "/images/phoenix.png")} alt="Phoenix Framework Logo"/>
         </a>
       </section>
     </header>
@@ -26,6 +26,6 @@
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
       <%= @inner_content %>
     </main>
-    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+    <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
   </body>
 </html>
