@@ -62,7 +62,7 @@ defmodule App.MixProject do
       {:elixir_auth_github, "~> 1.6.3"},
 
       # Track test coverage: github.com/parroty/excoveralls
-      {:excoveralls, "~> 0.15", only: [:test, :dev]},
+      {:excoveralls, "~> 0.15", only: [:test, :dev]}
     ]
   end
 
