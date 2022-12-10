@@ -99,7 +99,7 @@ Open your `mix.exs` file and add the following line to your `deps` list:
 ```elixir
 def deps do
   [
-    {:elixir_auth_github, "~> 1.3.0"}
+    {:elixir_auth_github, "~> 1.6.0"}
   ]
 end
 ```
