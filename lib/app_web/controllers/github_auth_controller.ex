@@ -7,6 +7,7 @@ defmodule AppWeb.GithubAuthController do
   def index(conn, %{"code" => code}) do
     # IO.inspect(code, label: "code index/2:8")
     {:ok, profile} = ElixirAuthGithub.github_auth(code)
+
     conn
     |> put_view(AppWeb.PageView)
     |> render(:welcome, profile: profile)
