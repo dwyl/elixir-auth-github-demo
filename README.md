@@ -6,7 +6,7 @@ A basic example/tutorial showing **GitHub OAuth** in a **`Phoenix` App**
 using [**`elixir-auth-github`**](https://github.com/dwyl/elixir-auth-github).
 
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/dwyl/elixir-auth-github-demo/Elixir%20CI?label=build&style=flat-square)](https://github.com/dwyl/elixir-auth-github-demo/actions/workflows/cy.yml)
-[![codecov.io](https://img.shields.io/codecov/c/github/dwyl/elixir-auth-github/master.svg?style=flat-square)](http://codecov.io/github/dwyl/elixir-auth-github?branch=master)
+[![codecov.io](https://img.shields.io/codecov/c/github/dwyl/elixir-auth-github/master.svg?style=flat-square)](https://codecov.io/github/dwyl/elixir-auth-github?branch=master)
 [![Hex.pm](https://img.shields.io/hexpm/v/elixir_auth_github?color=brightgreen&style=flat-square)](https://hex.pm/packages/elixir_auth_github)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/dwyl/elixir-auth-github/issues)
 
@@ -211,7 +211,7 @@ is the following format:
   },
   node_id: "MDQ6VXNlcjE5NDQwMA==",
   created_at: "2010-02-02T08:44:49Z",
-  blog: "http://www.dwyl.io/",
+  blog: "https://www.dwyl.io/",
   type: "User",
   bio: "Learn something new every day. github.com/dwyl/?q=learn",
   following_url: "https://api.github.com/users/nelsonic/following{/other_user}",
