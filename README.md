@@ -342,20 +342,17 @@ to demonstrate that everything works as expected:
 No data is saved by the demo app,
 so feel free to try an _break_ it!
 
-![heroku-demo-homepage](https://user-images.githubusercontent.com/194400/73600128-16c01080-4544-11ea-8d34-b45bba1c3576.png)
+https://elixir-auth-github-demo.fly.dev
 
-Auth Step:
+<img width="752" alt="image" src="https://user-images.githubusercontent.com/194400/218129527-716ea174-bc3d-4070-a02e-c53dc3c51fff.png">
 
-![heroku-demo-auth](https://user-images.githubusercontent.com/194400/73600133-23dcff80-4544-11ea-9a99-f357c7c3d497.png)
+Authorization screen:
 
-Success:
+<img width="817" alt="image" src="https://user-images.githubusercontent.com/194400/218129641-1c64cae7-3eb9-4616-b92e-a96f7b779ad8.png">
 
-![heroku-demo-welcome](https://user-images.githubusercontent.com/194400/73600142-3b1bed00-4544-11ea-977a-a38bbe5f129c.png)
+Welcome (success):
 
-If you want to learn how to deploy _your_ App to Heroku,
-we created a _separate_ guide for that!
-see:
-[/elixir-phoenix-app-deployment.md](https://github.com/dwyl/learn-heroku/blob/master/elixir-phoenix-app-deployment.md)
+<img width="867" alt="image" src="https://user-images.githubusercontent.com/194400/218129788-6880e9d6-94e1-4966-8920-5cb0253f9ce1.png">
 
 
 ### Deploy to Fly.io
