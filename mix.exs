@@ -46,7 +46,7 @@ defmodule App.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_view, "~> 0.18.3"},
       {:floki, ">= 0.30.0", only: :test},
-      {:esbuild, "~> 0.2", runtime: Mix.env() == :dev},
+      # {:esbuild, "~> 0.2", runtime: Mix.env() == :dev},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
 
@@ -67,7 +67,7 @@ defmodule App.MixProject do
   defp aliases do
     [
       test: ["test"],
-      "assets.deploy": ["esbuild default --minify", "phx.digest"],
+      # "assets.deploy": ["esbuild default --minify", "phx.digest"],
       t: ["test"],
       c: ["coveralls.html"],
       s: ["phx.server"]
