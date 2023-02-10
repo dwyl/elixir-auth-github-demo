@@ -7,9 +7,6 @@
 # General application configuration
 import Config
 
-config :app,
-  ecto_repos: [App.Repo]
-
 # Configures the endpoint
 config :app, AppWeb.Endpoint,
   url: [host: "localhost"],
