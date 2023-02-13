@@ -5,10 +5,11 @@
 A basic example/tutorial showing **GitHub OAuth** in a **`Phoenix` App**
 using [**`elixir-auth-github`**](https://github.com/dwyl/elixir-auth-github).
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/dwyl/elixir-auth-github-demo/Elixir%20CI?label=build&style=flat-square)](https://github.com/dwyl/elixir-auth-github-demo/actions/workflows/cy.yml)
-[![codecov.io](https://img.shields.io/codecov/c/github/dwyl/elixir-auth-github/master.svg?style=flat-square)](https://codecov.io/github/dwyl/elixir-auth-github?branch=master)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/dwyl/elixir-auth-github-demo/ci.yml?label=build&style=flat-square&branch=main)
+[![codecov.io](https://img.shields.io/codecov/c/github/dwyl/elixir-auth-github-demo/main.svg?style=flat-square)](http://codecov.io/github/dwyl/elixir-auth-github-demo?branch=main)
 [![Hex.pm](https://img.shields.io/hexpm/v/elixir_auth_github?color=brightgreen&style=flat-square)](https://hex.pm/packages/elixir_auth_github)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/dwyl/elixir-auth-github/issues)
+[![HitCount](https://hits.dwyl.com/dwyl/app-elixir-auth-github-demo.svg)](https://hits.dwyl.com/dwyl/app-elixir-auth-github-demo)
 
 </div>
 
@@ -99,7 +100,7 @@ Open your `mix.exs` file and add the following line to your `deps` list:
 ```elixir
 def deps do
   [
-    {:elixir_auth_github, "~> 1.6.0"}
+    {:elixir_auth_github, "~> 1.6   .0"}
   ]
 end
 ```
@@ -330,28 +331,73 @@ and will see welcome message:
 
 ## _Deployment_?
 
-This guide is meant to get your Phoenix App up-and-running
+This guide is meant to get your `Phoenix` App up-and-running
 with [elixir-auth-github](https://github.com/dwyl/elixir-auth-github)
 on **`localhost`**.
 
-The demo is deployed to Heroku
-to demonstrate that the code works as expected:
-https://elixir-auth-github-demo.herokuapp.com
+The demo is deployed to Fly.io
+to demonstrate that everything works as expected:
+
 
 No data is saved by the demo app,
 so feel free to try an _break_ it!
 
-![heroku-demo-homepage](https://user-images.githubusercontent.com/194400/73600128-16c01080-4544-11ea-8d34-b45bba1c3576.png)
+https://elixir-auth-github-demo.fly.dev
 
-Auth Step:
+<img width="752" alt="image" src="https://user-images.githubusercontent.com/194400/218129527-716ea174-bc3d-4070-a02e-c53dc3c51fff.png">
 
-![heroku-demo-auth](https://user-images.githubusercontent.com/194400/73600133-23dcff80-4544-11ea-9a99-f357c7c3d497.png)
+Authorization screen:
 
-Success:
+<img width="817" alt="image" src="https://user-images.githubusercontent.com/194400/218129641-1c64cae7-3eb9-4616-b92e-a96f7b779ad8.png">
 
-![heroku-demo-welcome](https://user-images.githubusercontent.com/194400/73600142-3b1bed00-4544-11ea-977a-a38bbe5f129c.png)
+Welcome (success):
 
-If you want to learn how to deploy _your_ App to Heroku,
-we created a _separate_ guide for that!
-see:
-[/elixir-phoenix-app-deployment.md](https://github.com/dwyl/learn-heroku/blob/master/elixir-phoenix-app-deployment.md)
+<img width="867" alt="image" src="https://user-images.githubusercontent.com/194400/218129788-6880e9d6-94e1-4966-8920-5cb0253f9ce1.png">
+
+
+### Deploy to Fly.io
+
+If you want to deploy your own `Phoenix` App to Fly.io,
+simply follow the official `Elixir` Getting Started guide:
+[fly.io/docs/elixir/getting-started](https://fly.io/docs/elixir/getting-started/)
+
+```sh
+fly launch
+```
+
+Speed through the prompts to create the App
+and then add the add the 3 required environment variables:
+
+```sh
+fly secrets set GITHUB_CLIENT_ID=4458109151751aetc
+fly secrets set GITHUB_CLIENT_SECRET=256df107df6454001a90d667fetc
+SECRET_KEY_BASE=fephli94y1u1X7F8Snh9RUvz5l0fd1ySaz9WtzaUAX+NmfB0uE2xwetc
+```
+
+> **Note**: _none_ of these keys are valid. 
+> They are just for illustration purposes.
+> Follow the instructions:
+> [dwyl/elixir-auth-google/blob/main/create-google-app-guide.md](https://github.com/dwyl/elixir-auth-google/blob/main/create-google-app-guide.md)
+> to get your Google App keys.
+
+Refer to the
+`Dockerfile` 
+and
+`fly.toml`
+in this demo project
+if you need an example.
+
+[elixir-google-auth-demo.fly.dev](https://elixir-google-auth-demo.fly.dev/)
+
+![elixir-google-auth-demo.fly.dev](https://user-images.githubusercontent.com/194400/217935199-2aa46e54-6977-4333-a3ac-22feab777004.png "works flawlessly")
+
+Recommended reading: 
+"Deploying with Releases"
+[hexdocs.pm/phoenix/releases.html](https://hexdocs.pm/phoenix/releases.html)
+
+For Continuous Deployment to Fly.io,
+read:
+[fly.io/docs/app-guides/continuous-deployment-with-github-actions](https://fly.io/docs/app-guides/continuous-deployment-with-github-actions/)
+
+
+
