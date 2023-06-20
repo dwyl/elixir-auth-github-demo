@@ -43,7 +43,7 @@ defmodule App.MixProject do
     [
       {:phoenix, "~> 1.7.0"},
       {:phoenix_html, "~> 3.0"},
-      {:phoenix_live_view, "~> 0.18.3"},
+      {:phoenix_live_view, "~> 0.19.2"},
       {:phoenix_view, "~> 2.0"},
       {:floki, ">= 0.30.0", only: :test},
       {:jason, "~> 1.2"},
