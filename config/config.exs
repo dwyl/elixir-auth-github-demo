@@ -1,5 +1,5 @@
 # This file is responsible for configuring your application
-# and its dependencies with the aid of the Mix.Config module.
+# and its dependencies with the aid of the Config module.
 #
 # This configuration file is loaded before any dependency and
 # is restricted to this project.
@@ -7,12 +7,19 @@
 # General application configuration
 import Config
 
+config :app,
+  generators: [timestamp_type: :utc_datetime]
+
 # Configures the endpoint
 config :app, AppWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "uisVurG8vaSjOECCS6RQVvzPzyBpZ7XZ9Sn2cT2TrajQX+J+KqFsfWK/eyyaqki+",
-  render_errors: [view: AppWeb.ErrorView, accepts: ~w(html json)],
-  pubsub_server: App.PubSub
+  adapter: Phoenix.Endpoint.Cowboy2Adapter,
+  render_errors: [
+    formats: [html: AppWeb.ErrorHTML, json: AppWeb.ErrorJSON],
+    layout: false
+  ],
+  pubsub_server: App.PubSub,
+  live_view: [signing_salt: "xcoMLupd"]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -24,4 +31,4 @@ config :phoenix, :json_library, Jason
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env()}.exs"
+import_config "#{config_env()}.exs"
