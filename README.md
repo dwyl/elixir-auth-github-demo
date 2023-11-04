@@ -55,16 +55,27 @@ you can **skip this step**. <br />
 Just make sure your app is in a known working state before proceeding_.
 
 ```
-mix phx.new app
+mix phx.new app 
 ```
 
-If prompted to install dependencies `Fetch and install dependencies? [Yn]`
+> **Note**: In creating this demo app 
+> we actually ran the command with the following 
+> [flags](https://hexdocs.pm/phoenix/Mix.Tasks.Phx.New.html):
+> `mix phx.new app --no-assets --no-dashboard --no-ecto --no-gettext --no-mailer`
+> to keep the project as basic as possible. 
+> You may need some or all of the features of `Phoenix`,
+> so check which flags are applicable to you.
+
+If prompted to install dependencies:
+```
+Fetch and install dependencies? [Yn]
+```
+
 Type `y` and hit the `[Enter]` key to install.
 
 You should see something like this:
 ```
 * running mix deps.get
-* running cd assets && npm install && node node_modules/webpack/bin/webpack.js
 * running mix deps.compile
 ```
 
@@ -89,7 +100,7 @@ mix phx.server
 ```
 
 and visit the endpoint in your web browser: http://localhost:4000/
-![phoenix-default-home](https://user-images.githubusercontent.com/194400/70126043-0d174b00-1670-11ea-856e-b31e593b5844.png)
+![phoenix-default-home](https://github.com/dwyl/elixir-auth-github-demo/assets/194400/3912c4af-b6e4-469c-be9f-7b5cdb3fee18)
 
 
 
@@ -100,7 +111,7 @@ Open your `mix.exs` file and add the following line to your `deps` list:
 ```elixir
 def deps do
   [
-    {:elixir_auth_github, "~> 1.6   .0"}
+    {:elixir_auth_github, "~> 1.6.0"}
   ]
 end
 ```
