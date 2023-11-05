@@ -14,5 +14,6 @@ defmodule AppWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/auth/github/callback", GithubAuthController, :index
   end
 end
