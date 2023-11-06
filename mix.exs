@@ -52,7 +52,7 @@ defmodule App.MixProject do
       {:plug_cowboy, "~> 2.5"},
 
       # The star of the show: github.com/dwyl/elixir-auth-github
-      {:elixir_auth_github, "~> 1.6.3"},
+      {:elixir_auth_github, "~> 1.6.5"},
 
       # Track test coverage: github.com/parroty/excoveralls
       {:excoveralls, "~> 0.15", only: [:test, :dev]}

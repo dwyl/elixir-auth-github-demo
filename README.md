@@ -13,6 +13,27 @@ using [**`elixir-auth-github`**](https://github.com/dwyl/elixir-auth-github).
 
 </div>
 
+- [`elixir-auth-github` _demo_](#elixir-auth-github-demo)
+- [_Why_? 🤷](#why-)
+- [_What_? 💭](#what-)
+- [_Who_? 👥](#who-)
+- [_How?_ 💻](#how-)
+  - [0. Create a New Phoenix App](#0-create-a-new-phoenix-app)
+  - [1. Add the `elixir_auth_github` package to `mix.exs` 📦](#1-add-the-elixir_auth_github-package-to-mixexs-)
+  - [2. Create the GitHub OAuth Application and Get Credentials ✨](#2-create-the-github-oauth-application-and-get-credentials-)
+  - [3. Create 3 New Files  ➕](#3-create-3-new-files--)
+    - [3.1 Create a `GithubAuthController` in your Project](#31-create-a-githubauthcontroller-in-your-project)
+    - [3.2 Create `welcome` template 📝](#32-create-welcome-template-)
+    - [3.3 Create the](#33-create-the)
+  - [4. Add the `/auth/github/callback` to `router.ex`](#4-add-the-authgithubcallback-to-routerex)
+  - [5. Update `PageController.index`](#5-update-pagecontrollerindex)
+    - [5.1 Update the `page/index.html.eex` Template](#51-update-the-pageindexhtmleex-template)
+  - [6. _Run_ the App!](#6-run-the-app)
+  - [_Deployment_?](#deployment)
+    - [Deploy to Fly.io](#deploy-to-flyio)
+
+
+
 # _Why_? 🤷
 
 **We _love_** having _**detailed docs** and **examples**_
