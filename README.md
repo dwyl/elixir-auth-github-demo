@@ -24,7 +24,7 @@ using [**`elixir-auth-github`**](https://github.com/dwyl/elixir-auth-github).
   - [3. Create 3 New Files  ➕](#3-create-3-new-files--)
     - [3.1 Create a `GithubAuthController` in your Project](#31-create-a-githubauthcontroller-in-your-project)
     - [3.2 Create `welcome` template 📝](#32-create-welcome-template-)
-    - [3.3 Create the](#33-create-the)
+    - [3.3 Create the `github_auth_html.ex` file](#33-create-the-github_auth_htmlex-file)
   - [4. Add the `/auth/github/callback` to `router.ex`](#4-add-the-authgithubcallback-to-routerex)
   - [5. Update `PageController.index`](#5-update-pagecontrollerindex)
     - [5.1 Update the `page/index.html.eex` Template](#51-update-the-pageindexhtmleex-template)
@@ -268,7 +268,7 @@ Use this data how you see fit.
 (_obviously treat it with respect,
   only store what you need and keep it secure!_)
 
-### 3.3 Create the 
+### 3.3 Create the `github_auth_html.ex` file
 
 Create a file with the path:
 `lib/app_web/controllers/github_auth_html.ex`
@@ -282,6 +282,8 @@ defmodule AppWeb.GithubAuthHTML do
   embed_templates "github_auth_html/*"
 end
 ```
+
+This is required so `Phoenix` knows where to find the template.
 
 
 ## 4. Add the `/auth/github/callback` to `router.ex`
@@ -398,7 +400,7 @@ so feel free to try an _break_ it!
 
 https://elixir-auth-github-demo.fly.dev
 
-<img width="752" alt="image" src="https://user-images.githubusercontent.com/194400/218129527-716ea174-bc3d-4070-a02e-c53dc3c51fff.png">
+<img width="752" alt="image" src="https://github.com/dwyl/elixir-auth-github-demo/assets/194400/ddad6846-c757-4f56-9cbc-ce9b945dfee6">
 
 Authorization screen:
 
@@ -406,7 +408,7 @@ Authorization screen:
 
 Welcome (success):
 
-<img width="867" alt="image" src="https://user-images.githubusercontent.com/194400/218129788-6880e9d6-94e1-4966-8920-5cb0253f9ce1.png">
+<img src="https://github.com/dwyl/elixir-auth-github-demo/assets/194400/9e1fdde2-c871-4f38-a23b-3f97e76436d8">
 
 
 ### Deploy to Fly.io
