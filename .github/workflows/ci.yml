@@ -10,17 +10,6 @@ jobs:
   build:
     name: Build and test
     runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:12
-        ports: ['5432:5432']
-        env:
-          POSTGRES_PASSWORD: postgres
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
     strategy:
       matrix:
         otp: ['25.1.2']
@@ -49,7 +38,6 @@ jobs:
       run: mix coveralls.json
       env:
         MIX_ENV: test
-        AUTH_API_KEY: ${{ secrets.AUTH_API_KEY }}
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
 
