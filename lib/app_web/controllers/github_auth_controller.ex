@@ -6,6 +6,6 @@ defmodule AppWeb.GithubAuthController do
   """
   def index(conn, %{"code" => code}) do
     {:ok, profile} = ElixirAuthGithub.github_auth(code)
-    render(conn, :welcome, [layout: false, profile: profile])
+    render(conn, :welcome, layout: false, profile: profile)
   end
 end
