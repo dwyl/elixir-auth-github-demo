@@ -11,6 +11,15 @@ using [**`elixir-auth-github`**](https://github.com/dwyl/elixir-auth-github).
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/dwyl/elixir-auth-github/issues)
 [![HitCount](https://hits.dwyl.com/dwyl/app-elixir-auth-github-demo.svg)](https://hits.dwyl.com/dwyl/app-elixir-auth-github-demo)
 
+Try it: 
+[elixir-auth-github-demo.fly.dev](https://elixir-auth-github-demo.fly.dev/)
+
+<img src="https://github.com/dwyl/elixir-auth-github-demo/assets/194400/ddad6846-c757-4f56-9cbc-ce9b945dfee6">
+
+No data is stored. 
+Try and break it.
+Open an issue if you spot something. 
+
 </div>
 
 - [`elixir-auth-github` _demo_](#elixir-auth-github-demo)
@@ -81,8 +90,8 @@ mix phx.new app
 
 > **Note**: In creating this demo app 
 > we ran the command with the following 
-> [**flags**](https://hexdocs.pm/phoenix/Mix.Tasks.Phx.New.html):
-> `mix phx.new app --no-assets --no-dashboard --no-ecto --no-gettext --no-mailer`
+> [**flags**](https://hexdocs.pm/phoenix/Mix.Tasks.Phx.New.html): <br />
+> `mix phx.new app --no-assets --no-dashboard --no-ecto --no-gettext --no-mailer` <br />
 > to keep the project as basic as possible. 
 > You may need some or all of the features of `Phoenix`,
 > so check which flags are applicable to you.
@@ -400,7 +409,7 @@ so feel free to try an _break_ it!
 
 https://elixir-auth-github-demo.fly.dev
 
-<img width="752" alt="image" src="https://github.com/dwyl/elixir-auth-github-demo/assets/194400/ddad6846-c757-4f56-9cbc-ce9b945dfee6">
+<img src="https://github.com/dwyl/elixir-auth-github-demo/assets/194400/ddad6846-c757-4f56-9cbc-ce9b945dfee6">
 
 Authorization screen:
 
@@ -442,10 +451,6 @@ and
 `fly.toml`
 in this demo project
 if you need an example.
-
-[elixir-google-auth-demo.fly.dev](https://elixir-google-auth-demo.fly.dev/)
-
-![elixir-google-auth-demo.fly.dev](https://user-images.githubusercontent.com/194400/217935199-2aa46e54-6977-4333-a3ac-22feab777004.png "works flawlessly")
 
 Recommended reading: 
 "Deploying with Releases"
